@@ -32,10 +32,12 @@ table 50100 Chicken
 
         field(5; Description; Text[255])
         {
-            DataClassification = CustomerContent;
-            TableRelation = ChickenType.Description;
+            //DataClassification = CustomerContent;
+            //TableRelation = ChickenType.Description;
             Caption = 'Description';
             Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(ChickenType.Description where(Breed = field(Breed)));
         }
 
         field(6; Picture; MediaSet)
@@ -55,6 +57,8 @@ table 50100 Chicken
             DataClassification = CustomerContent;
             Caption = 'Last Date Modified';
         }
+
+
     }
 
     keys

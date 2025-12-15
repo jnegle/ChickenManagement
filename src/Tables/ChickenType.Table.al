@@ -2,6 +2,7 @@ table 50101 ChickenType
 {
     DataClassification = CustomerContent;
     DataCaptionFields = "Breed", "Description";
+    LookupPageId = "Chicken Types";
 
     fields
     {
