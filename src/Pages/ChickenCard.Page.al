@@ -64,6 +64,14 @@ page 50100 "Chicken Card"
                     Editable = false;
 
                 }
+
+                field("Number of Eggs Produced"; Rec."Number of Eggs Produced")
+                {
+                    ToolTip = 'Displays the total number of eggs produced by the chicken.';
+                    ApplicationArea = All;
+                    Editable = false;
+
+                }
             }
         }
     }

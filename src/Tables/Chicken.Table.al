@@ -28,13 +28,16 @@ table 50100 Chicken
             DataClassification = CustomerContent;
             TableRelation = ChickenType;
             Caption = 'Breed';
+
+            trigger OnValidate()
+            begin
+                CalcFields(Description);
+            end;
         }
 
         field(5; Description; Text[255])
         {
-            //DataClassification = CustomerContent;
-            //TableRelation = ChickenType.Description;
-            Caption = 'Description';
+            Caption = 'Chicken Breed Description';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup(ChickenType.Description where(Breed = field(Breed)));
@@ -58,6 +61,28 @@ table 50100 Chicken
             Caption = 'Last Date Modified';
         }
 
+        field(9; "Number of Eggs Produced"; Integer)
+        {
+            Caption = 'Number of Eggs Produced';
+            FieldClass = FlowField;
+            Editable = false;
+            CalcFormula = sum("Egg Production Line".Quantity where(Chicken = field(No),
+                                "Egg Production Date" = field("Date Filter"),
+                                "Egg Type" = field("Egg Type Filter")));
+        }
+
+        field(10; "Date Filter"; Date)
+        {
+            Caption = 'My Date Filter';
+            FieldClass = FlowFilter;
+        }
+
+        field(11; "Egg Type Filter"; Code[20])
+        {
+            Caption = 'Egg Type Filter';
+            FieldClass = FlowFilter;
+            TableRelation = EggType;
+        }
 
     }
 
@@ -71,7 +96,7 @@ table 50100 Chicken
 
     fieldgroups
     {
-        fieldgroup(DropDown; Description, Breed) { }
+        fieldgroup(DropDown; No, Name, Description, Breed) { }
         fieldgroup(Brick; Description, Picture) { }
     }
 

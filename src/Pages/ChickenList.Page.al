@@ -20,11 +20,11 @@ page 50101 Chicken
                     Tooltip = 'Chicken number.';
                     ApplicationArea = All;
                 }
-                // field(Name; Rec.Name)
-                // {
-                //     ToolTip = 'Enter the name of the chicken.';
-                //     ApplicationArea = All;
-                // }
+                field(Name; Rec.Name)
+                {
+                    ToolTip = 'Enter the name of the chicken.';
+                    ApplicationArea = All;
+                }
 
                 // field(DoB; Rec.DoB)
                 // {
@@ -60,6 +60,14 @@ page 50101 Chicken
                 field("Last Date Modified"; Rec."Last Date Modified")
                 {
                     ToolTip = 'Displays the last date when the chicken record was modified.';
+                    ApplicationArea = All;
+                    Editable = false;
+
+                }
+
+                field("Number of Eggs Produced"; Rec."Number of Eggs Produced")
+                {
+                    ToolTip = 'Displays the total number of eggs produced by the chicken.';
                     ApplicationArea = All;
                     Editable = false;
 

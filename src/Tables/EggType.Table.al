@@ -2,6 +2,8 @@ table 50102 EggType
 {
     DataClassification = CustomerContent;
     Caption = 'Egg Type';
+    LookupPageId = "Egg Types";
+    DrillDownPageId = "Egg Types";
     DataCaptionFields = "Egg Type", "Description";
 
     fields
