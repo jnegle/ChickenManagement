@@ -33,27 +33,18 @@ table 50102 EggType
         // Add changes to field groups here
     }
 
+    procedure InsertEggType(EggTypeCode: Code[20]; EggTypeDescription: Text[50])
     var
-        myInt: Integer;
-
-    trigger OnInsert()
+        EggType: Record EggType;
     begin
-
+        clear(EggType);
+        EggType.Init();
+        EggType."Egg Type" := EggTypeCode;
+        EggType.Description := EggTypeDescription;
+        if not EggType.Get(EggTypeCode) then
+            EggType.Insert();
     end;
 
-    trigger OnModify()
-    begin
 
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
 
 }

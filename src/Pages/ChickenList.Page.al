@@ -80,17 +80,42 @@ page 50101 Chicken
     {
         area(Processing)
         {
-            action(ActionName)
+            action(TryError)
             {
 
                 trigger OnAction()
                 begin
+                    Error('This is Error');
+                end;
+            }
 
+            action(DeleteSelected)
+            {
+                trigger OnAction()
+                begin
+                    DeleteChicken();
                 end;
             }
         }
     }
 
+    local procedure DeleteChicken()
     var
-        myInt: Integer;
+        Chicken: Record Chicken;
+        LoopNr: Integer;
+    begin
+        CurrPage.SetSelectionFilter(Chicken);
+        //Chicken.Next();
+        Message('Chicken Count: %1', Chicken.Count());
+        if Chicken.IsEmpty() then
+            Error('No Records are selected!');
+        if Chicken.Findset() then
+            repeat
+                Message('Chicken nr: %1', Chicken.No);
+                Chicken.Delete(true);
+            until Chicken.Next() = 0
+    end;
+
+    var
+    //TriggerLog: Record TriggerLog;
 }

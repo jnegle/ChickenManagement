@@ -7,13 +7,14 @@
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "Sandbox",
-            "startupObjectId": 22,
+            "startupObjectId": 50110,
             "startupObjectType": "Page",
             "breakOnError": "All",
-            "launchBrowser": true,
+            "launchBrowser": false,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "tenant": "f3c168c5-4792-4fd3-b3c6-4eb3c4108e78"
+            "tenant": "f3c168c5-4792-4fd3-b3c6-4eb3c4108e78",
+            "startupCompany": "Chicken Farm"
         }
     ]
 }

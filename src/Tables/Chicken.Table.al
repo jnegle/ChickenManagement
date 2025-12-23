@@ -101,7 +101,7 @@ table 50100 Chicken
     }
 
     var
-        myInt: Integer;
+    //TriggerLog: Record TriggerLog;
 
     trigger OnInsert()
     begin
@@ -114,7 +114,22 @@ table 50100 Chicken
     end;
 
     trigger OnDelete()
+    var
+        EggProductionLine: Record "Egg Production Line";
+        ChickenHasEggsErr: Label 'The Chicken %1 %2 has eggs, you can''t detele it.', Comment = '%1 = Chicken No. ; %2 = Chicken Description';
+        LoopNr: Integer;
     begin
+        Clear(EggProductionLine);
+        EggProductionLine.SetRange(EggProductionLine.Chicken, Rec.No);
+        //Message('Trying to delete %1', Rec.No);
+        //TriggerLog.InsertLogEntry('Chicken Table', 'OnDelete ' + Rec.No);
+        if not EggProductionLine.IsEmpty() then begin
+            Rec.CalcFields(Rec.Description);
+            Error(ChickenHasEggsErr, Rec.No, Rec.Description);
+        end;
+
+
+
 
     end;
 
