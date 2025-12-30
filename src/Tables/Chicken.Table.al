@@ -116,7 +116,7 @@ table 50100 Chicken
     trigger OnDelete()
     var
         EggProductionLine: Record "Egg Production Line";
-        ChickenHasEggsErr: Label 'The Chicken %1 %2 has eggs, you can''t detele it.', Comment = '%1 = Chicken No. ; %2 = Chicken Description';
+        ChickenHasEggsErr: Label 'The Chicken %1 %2 has eggs, you can''t delete it.', Comment = '%1 = Chicken No. ; %2 = Chicken Description';
         LoopNr: Integer;
     begin
         Clear(EggProductionLine);

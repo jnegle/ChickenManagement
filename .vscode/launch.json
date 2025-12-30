@@ -10,7 +10,7 @@
             "startupObjectId": 50110,
             "startupObjectType": "Page",
             "breakOnError": "All",
-            "launchBrowser": false,
+            "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "f3c168c5-4792-4fd3-b3c6-4eb3c4108e78",
