@@ -13,9 +13,9 @@ codeunit 50112 InstallChickenTypes
         if not ChickenType.IsEmpty() then
             exit
         else begin
-            InsertChickenType('Black', 'Productive, short life');
-            InsertChickenType('White', 'Good production, small eggs');
-            InsertChickenType('African', 'Productive, very loud');
+            InsertChickenType('ChickenType01', 'Chicken Type 01');
+            InsertChickenType('ChickenType02', 'Chicken Type 02');
+            InsertChickenType('ChickenType03', 'Chicken Type 03');
         end;
     end;
 

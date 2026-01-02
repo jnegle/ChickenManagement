@@ -2,7 +2,7 @@
   "id": "0d1cc645-3426-4d77-9bbc-3714ee702037",
   "name": "Chicken Management",
   "publisher": "Solutize",
-  "version": "1.0.0.1",
+  "version": "1.0.0.8",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -27,6 +27,7 @@
   },
   "runtime": "16.0",
   "features": [
-    "NoImplicitWith"
+    "NoImplicitWith",
+    "TranslationFile"
   ]
 }
